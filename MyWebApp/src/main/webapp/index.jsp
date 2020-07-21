@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Hello Paul! </h2>
+<h2>Hello DevOps class 101 </h2>
 </body>
 </html>
