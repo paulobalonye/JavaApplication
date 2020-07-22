@@ -1,5 +1,11 @@
+
+<!DOCTYPE html>
 <html>
 <body>
-<h2>Hello DevOps.lets test SonarQube </h2>
+
+<h1>Just playing with SOnarQube</h1>
+
+<p>lets go there</p>
+
 </body>
 </html>
