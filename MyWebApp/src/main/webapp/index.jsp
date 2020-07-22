@@ -5,8 +5,8 @@
 </head>
 <body>
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
+<h1>I am just using git kraken to edit this code</h1>
+<p>it looks pretty cool.</p>
 
 </body>
 </html> 
