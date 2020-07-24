@@ -5,8 +5,8 @@
 </head>
 <body>
 
-<h1>Just having fun!</h1>
-<p>it looks pretty cool.</p>
+<h1>SonarQube</h1>
+
 
 </body>
 </html> 
