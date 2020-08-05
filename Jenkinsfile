@@ -47,20 +47,7 @@ pipeline {
       }
     }
 
-    stage ('QA Deploy') {
-      steps {
-      echo "deploying to QA Env "
-      deploy adapters: [tomcat9(credentialsId: '63823fef-6f8e-4cf4-ab53-a4b6f8a94768', path: '', url: 'http://ec2-18-212-148-30.compute-1.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
-      }
-    }
-
-
- stage ('Prod Deploy') {
-      steps {
-      echo "deploying to Prod Env "
-      deploy adapters: [tomcat9(credentialsId: '043364ef-3091-48db-aaff-ef4781f38373', path: '', url: 'http://ec2-100-25-167-32.compute-1.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
-      }
-    }
+    
 
     stage ('Slack Notification') {
       steps {
