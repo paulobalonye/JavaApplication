@@ -22,11 +22,28 @@ pipeline {
       jacoco()
       }
     }
-   
+    stage ('Nexus Upload') {
+      steps {
+      nexusArtifactUploader(
+      nexusVersion: 'nexus3',
+      protocol: 'http',
+      nexusUrl: 'http://ec2-18-207-139-110.compute-1.amazonaws.com:8081',
+      groupId: 'myGroupId',
+      version: '1.0-SNAPSHOT',
+      repository: 'maven-snapshots',
+      credentialsId: 'c531deff-0431-4355-8e73-ee5dc27d53c7',
+      artifacts: [
+      [artifactId: 'MyWebApp',
+      classifier: '',
+      file: 'MyWebApp/target/MyWebApp.war',
+      type: 'war']
+      ])
+      }
+    }
     stage ('DEV Deploy') {
       steps {
       echo "deploying to DEV Env "
-      deploy adapters: [tomcat9(credentialsId: '043364ef-3091-48db-aaff-ef4781f38373', path: '', url: 'ec2-100-25-167-32.compute-1.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
+      deploy adapters: [tomcat9(credentialsId: '043364ef-3091-48db-aaff-ef4781f38373', path: '', url: 'http//ec2-100-25-167-32.compute-1.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
       }
     }
     stage ('DEV Approve') {
