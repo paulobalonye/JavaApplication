@@ -46,23 +46,6 @@ pipeline {
       deploy adapters: [tomcat9(credentialsId: '0e74d36e-4eeb-4963-b18f-cc3df3abe4b9', path: '', url: 'http://ec2-54-175-209-224.compute-1.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
       }
     }
-
-
-stage ('QA Deploy') {
-      steps {
-      echo "deploying to DEV Env "
-      
-      }
-    }
-
-
-stage ('Production Deploy') {
-      steps {
-      echo "deploying to DEV Env "
-      }
-    }
-
-
     stage ('Slack Notification') {
       steps {
         echo "deployed to DEV Env successfully"
