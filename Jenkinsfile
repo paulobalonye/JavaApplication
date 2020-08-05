@@ -31,7 +31,7 @@ pipeline {
       groupId: 'myGroupId',
       version: '1.0-SNAPSHOT',
       repository: 'maven-snapshots',
-      credentialsId: 'c531deff-0431-4355-8e73-ee5dc27d53c7',
+      credentialsId: '81e699ab-2360-49cc-a27f-a483d4791b06',
       artifacts: [
       [artifactId: 'MyWebApp',
       classifier: '',
